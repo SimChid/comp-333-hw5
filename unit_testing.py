@@ -3,6 +3,7 @@ COMP-333
 Unit tests for given functions from unit_testing_sample_code.py
 Simon Chidley & Aaron Foote
 """
+
 ## The following functions come from unit_testing_sample_code.py provided in the assignment
 # COMP 333 Software Engineering
 # Wesleyan University
@@ -75,10 +76,7 @@ def test_string(n,s,tst):
 def test_strlist(n,sl,tstl):
     print("Test {}:".format(n))
     for i in range(len(sl)):
-        if sl[i] == tstl[i]:
-            print("Test {} passed! '{}' matches '{}'.".format(i,tstl[i],sl[i]))
-        else:
-            print("Test {} failed. Expected: '{}'. Got '{}'.".format(i,sl[i],tstl[i]))
+        test_string(str(i),sl[i],tstl[i])
 
 # Testing int functions 
 # n: string, num: int, tst: int --> None
@@ -93,10 +91,7 @@ def test_int(n,num,tst):
 def test_intlist(n,numl,tstl):
     print("Test {}:".format(n))
     for i in range(len(numl)):
-        if numl[i] == tstl[i]:
-            print("Test {} passed! '{}' matches '{}'.".format(n,tstl[i],numl[i]))
-        else:
-            print("Test {} failed. Expected: '{}'. Got: '{}'.".format(n,numl[i],tstl[i]))
+        test_int(str(i),numl[i],tstl[i])
 
 #Run all tests with 'python3 unit_testing.py' in command line.
 print("\nString Capitalizer Tests:")

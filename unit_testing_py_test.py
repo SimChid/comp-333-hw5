@@ -65,42 +65,31 @@ def manipulate_list(intlist):
 
 ## Run all tests with 'pytest' in the terminal. More instructions in the README.md
 
-@pytest.mark.cap
 def test_cap_0():
     assert "TwO" == string_capitalizer("two")
-@pytest.mark.cap
 def test_cap_1():
     assert "C" == string_capitalizer("c")
-@pytest.mark.cap
 def test_cap_2():
     assert "FouR" == string_capitalizer(4)
-@pytest.mark.cap
 def test_cap_3():
     assert "" == string_capitalizer("")
 
-@pytest.mark.caplist
 def test_cap_list():
     str_l = ["TwO","C","FouR",""]
     tst_l = capitalize_list(["two","c",4,""])
     for i in range(4):
         assert str_l[i] == tst_l[i]
 
-@pytest.mark.manip
 def test_int_manip_0():
     assert 66 == integer_manipulator(10)
-@pytest.mark.manip
 def test_int_manip_1():
     assert 2 == integer_manipulator(2)
-@pytest.mark.manip
 def test_int_manip_2():
     assert 6 == integer_manipulator(3)
-@pytest.mark.manip
 def test_int_manip_3():
     assert 0 == integer_manipulator(0)
-@pytest.mark.manip
 def test_int_manip_4():
     assert 1 == integer_manipulator("three")
 
-@pytest.mark.maniplist
 def test_int_manip_list():
     assert [66,2,6,0,1] == manipulate_list([10,2,3,0,"three"])

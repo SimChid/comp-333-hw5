@@ -2,6 +2,7 @@ import React from "react" ;
 import {render,screen,fireEvent, getByTestId} from "@testing-library/react" ;
 import SignInUp from "./SignInUp";
 import "@testing-library/jest-dom" ;
+import { BrowserRouter } from "react-router-dom";
 import userEvent from '@testing-library/user-event';
 import { act } from "react-dom/test-utils";
 //import "@testing-library/jest-dom/extend-expect";
@@ -52,8 +53,12 @@ describe("Initial Page", () => {
 });
 
 describe("Logging In", () => {
-  it("Login works properly", () => {
-    render(<SignInUp />) ;
+  it("Login works properly", async() => {
+    render(
+      <BrowserRouter>
+        <SignInUp />
+      </BrowserRouter>
+    ) ;
     const logInButton = screen.getByTestId("logInButton") ;
     fireEvent.click(logInButton) ;
 
@@ -68,8 +73,8 @@ describe("Logging In", () => {
     expect(usernameElement.value).toBe('aaron') ;
     expect(passwordElement.value).toBe('strongpassword') ;
     const submit = screen.getByTestId("submit") ;
-    fireEvent.click(submit) ;
-    const welcome = screen.getByTestId('welcome') ;
+    await fireEvent.click(submit) ;
+    
     /*
     
     
@@ -96,13 +101,13 @@ describe("Logging In", () => {
 
     
         //I input a valid username and password, so I expect to render the page that appears after logging in. 
-    
-    const songListComponent = screen.getByTestId('songList') ;
     const welcome = screen.getByTestId('welcome') ;
+    const songListComponent = screen.getByTestId('songList') ;
+    //const welcome = screen.getByTestId('welcome') ;
     const logout = screen.getByTestId('logout') ;
     expect(songListComponent).toBeInTheDocument() ;
     expect(welcome).toBeInTheDocument() ;
-    expect(logout).toBeInTheDocument() ;*/
+    expect(logout).toBeInTheDocument() ; */
     
   }) ;
 });

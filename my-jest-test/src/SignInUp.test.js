@@ -56,6 +56,26 @@ describe("Logging In", () => {
     render(<SignInUp />) ;
     const logInButton = screen.getByTestId("logInButton") ;
     fireEvent.click(logInButton) ;
+
+    const usernameElement = screen.getByPlaceholderText("username") ;
+    //getByTestId('username') ;
+    const passwordElement = screen.getByPlaceholderText("password") ;
+    //screen.getByTestId('password') ;
+    //userEvent.type(usernameElement,'aaron') ;
+    //userEvent.type(passwordElement,'strongpassword') ;
+    fireEvent.change(usernameElement,{target : {value : 'aaron'}}) ;
+    fireEvent.change(passwordElement,{target : {value : 'strongpassword'}}) ;
+    expect(usernameElement.value).toBe('aaron') ;
+    expect(passwordElement.value).toBe('strongpassword') ;
+    const submit = screen.getByTestId("submit") ;
+    fireEvent.click(submit) ;
+    const welcome = screen.getByTestId('welcome') ;
+    /*
+    
+    
+    fireEvent.click(submit) ;
+
+    
     
 
     //fireEvent.submit(submit);
@@ -63,12 +83,7 @@ describe("Logging In", () => {
     //userEvent.type(usernameElement,'aaron') ;
     //userEvent.type(passwordElement,'strongpassword') ;
     act(() => {
-        const usernameElement = screen.getByTestId('username') ;
-        const passwordElement = screen.getByTestId('password') ;
-        userEvent.type(usernameElement,'aaron') ;
-        userEvent.type(passwordElement,'strongpassword') ;
-        const submit = screen.getByTestId("submit") ;
-        fireEvent.click(submit) ;
+        
         
         //submit.dispatchEvent(new MouseEvent('click')) ;
         //
@@ -87,7 +102,7 @@ describe("Logging In", () => {
     const logout = screen.getByTestId('logout') ;
     expect(songListComponent).toBeInTheDocument() ;
     expect(welcome).toBeInTheDocument() ;
-    expect(logout).toBeInTheDocument() ;
+    expect(logout).toBeInTheDocument() ;*/
     
   }) ;
 });

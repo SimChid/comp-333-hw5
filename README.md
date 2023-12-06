@@ -67,3 +67,7 @@ Once everything is set up, run the tests within test-project in the terminal usi
 ```bash
 php vendor/bin/phpunit tests
 ```
+
+## Problem 6
+
+I asked ChatGPT to help write a test that simulates user input using Jest. Initially it wasn't very helpful, but I was able to refine my question to get it to answer the question using `user-event`. It wasn't correct but it got me moving in the right direction. Nothing I couldn't have just done with a regular search engine though. To see the conversation, check out this [this link](https://chat.openai.com/share/5725218a-8fed-4475-b00e-7ad949e9de50). This should show the exact questions I asked and the code ChatGPT provided.

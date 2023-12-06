@@ -76,8 +76,8 @@ class SignInUp extends React.Component{
             <div>
               <p className = "intro" role='Info'>{this.state.information}</p><br />
               <form  role='LogInHandler' onSubmit={this.LogInHandler}>
-                <label className = "uname">Username:</label><input data-testid="username" type = "text" onChange={this.trackUsername} /><br />
-                <label className = "uname">Password:</label><input data-testid="password" type = "password" onChange={this.trackPassword} /><br />
+                <label className = "uname">Username:</label><input placeholder="username" type = "text" onChange={this.trackUsername} /><br />
+                <label className = "uname">Password:</label><input placeholder="password" type = "password" onChange={this.trackPassword} /><br />
                 <button data-testid="submit" type = "submit">Log In</button>
               </form>
             </div>) ;

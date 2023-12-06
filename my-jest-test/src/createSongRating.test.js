@@ -2,12 +2,13 @@ import React from "react" ;
 import {render,screen,fireEvent, getByTestId} from "@testing-library/react" ;
 import CreateSongRating from "./createSongRating";
 import "@testing-library/jest-dom" ;
+import { BrowserRouter } from "react-router-dom";
 
 describe("Rendering Tests", () => {
 
     
     it("renders the create rating form", () => {
-        render(<CreateSongRating />);
+        render(<BrowserRouter><CreateSongRating /></BrowserRouter>);
         const inputElement = screen.getByTestId("form");
         expect(inputElement).toBeInTheDocument();
     });

@@ -63,51 +63,11 @@ describe("Logging In", () => {
     fireEvent.click(logInButton) ;
 
     const usernameElement = screen.getByPlaceholderText("username") ;
-    //getByTestId('username') ;
     const passwordElement = screen.getByPlaceholderText("password") ;
-    //screen.getByTestId('password') ;
-    //userEvent.type(usernameElement,'aaron') ;
-    //userEvent.type(passwordElement,'strongpassword') ;
     fireEvent.change(usernameElement,{target : {value : 'aaron'}}) ;
     fireEvent.change(passwordElement,{target : {value : 'strongpassword'}}) ;
     expect(usernameElement.value).toBe('aaron') ;
     expect(passwordElement.value).toBe('strongpassword') ;
-    const submit = screen.getByTestId("submit") ;
-    await fireEvent.click(submit) ;
-    
-    /*
-    
-    
-    fireEvent.click(submit) ;
-
-    
-    
-
-    //fireEvent.submit(submit);
-    
-    //userEvent.type(usernameElement,'aaron') ;
-    //userEvent.type(passwordElement,'strongpassword') ;
-    act(() => {
-        
-        
-        //submit.dispatchEvent(new MouseEvent('click')) ;
-        //
-    }) ;
-    
-    //userEvent.type(usernameElement,'aaron') ;
-    //expect(usernameElement).toHaveValue('aaron'); 
-    
-    
-
-    
-        //I input a valid username and password, so I expect to render the page that appears after logging in. 
-    const welcome = screen.getByTestId('welcome') ;
-    const songListComponent = screen.getByTestId('songList') ;
-    //const welcome = screen.getByTestId('welcome') ;
-    const logout = screen.getByTestId('logout') ;
-    expect(songListComponent).toBeInTheDocument() ;
-    expect(welcome).toBeInTheDocument() ;
-    expect(logout).toBeInTheDocument() ; */
     
   }) ;
 });

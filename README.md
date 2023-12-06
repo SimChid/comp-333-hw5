@@ -67,7 +67,11 @@ Once everything is set up, run the tests within test-project in the terminal usi
 ```bash
 php vendor/bin/phpunit tests
 ```
+## Problem 4
 
+To get the app/tests up and running on your own device, first clone the repository. Next, navigate into the `my-jest-test` directory. Run the command `npm install` to get all of the dependencies, and then run `npm start` to run the app or `npm test` to run the tests. Just as a side note, I did not  do question 2d. I went to TA hours on Monday, SCIC hours on Tuesday, Professor Zimmeck's office hours on Wednesday, and more SCIC hours on Wednesday, but ultimately nobody was able to figure out why some `fireEvent.click()` commands work and others don't within the same test. I do parts 2a,2b, and 2c though.
+## Problem 5
+As instructed, the automated tests are in the `.github/workflows` directory.
 ## Problem 6
 
 I asked ChatGPT to help write a test that simulates user input using Jest. Initially it wasn't very helpful, but I was able to refine my question to get it to answer the question using `user-event`. It wasn't correct but it got me moving in the right direction. Nothing I couldn't have just done with a regular search engine though. To see the conversation, check out this [this link](https://chat.openai.com/share/5725218a-8fed-4475-b00e-7ad949e9de50). This should show the exact questions I asked and the code ChatGPT provided.

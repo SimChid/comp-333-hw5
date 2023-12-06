@@ -22,9 +22,11 @@ jobs:
     steps:
         - name: Checkout code
           uses: actions/checkout@v2
+          working-directory: ./my-jest-test
 
         - name: Install dependencies
           run: npm install
+          working-directory: ./my-jest-test
 
         - name: Run Jest tests
           run: npm test
